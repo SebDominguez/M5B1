@@ -1,0 +1,9 @@
+# Python junk
+.venv
+__pycache__/
+
+# Pytest junk
+pytest-cache-files-*
+
+# macOS junk
+.DS_Store
