@@ -180,3 +180,41 @@ act push
 # sur macOS avec colima ajouter :
 #act push --container-daemon-socket -
 ```
+
+
+Brief-2:
+
+Le contenu des test du brief 1 on ete copié dans le docker-publish.yml workflow
+
+Pour eviter de polluer docker hub avec des build foireu on publish dans docker-hub uniquement si les test passent.
+
+Avant de lancer le  workflow on peu verifier si les images build:
+
+pour tester que les images build:
+
+
+```bash
+docker build -t m5b2-backend:test ./backend
+
+
+docker build -t m5b2-backend:test ./frontend
+```
+
+**Note** : on peut aussi utiliser `buildx` vu que `docker build` est déprécié, et parce que tous les outils ont maintenant besoin d'un `x` en suffixe.
+
+```bash
+sur macos brew install docker-buildx
+```
+
+Vérifier que les conteneurs démarrent sans erreur :
+
+```bash
+docker compose up --build
+```
+
+
+
+
+
+
+
