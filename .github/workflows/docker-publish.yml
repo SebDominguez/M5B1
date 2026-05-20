@@ -3,6 +3,10 @@ name: docker-publish
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '**.md' # eviter de build et test quand je change une virgule dans un markdown
+      - 'ressources/**' # pareil mais quand je fou un fichier dans resources
+      - '.gitignore' # quand je touche au .gitignore
 
 jobs:
   pytest:
